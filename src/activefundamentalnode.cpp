@@ -446,8 +446,8 @@ vector<COutput> CActiveFundamentalnode::SelectCoinsFundamentalnode()
     vector<COutput> filteredCoins;
     vector<COutPoint> confLockedCoins;
 
-    // Temporary unlock MN coins from fundamentalnode.conf
-    if (GetBoolArg("-mnconflock", true)) {
+    // Temporary unlock FN coins from fundamentalnode.conf
+    if (GetBoolArg("-fnconflock", true)) {
         uint256 mnTxHash;
         BOOST_FOREACH (CFundamentalnodeConfig::CFundamentalnodeEntry mne, fundamentalnodeConfig.getEntries()) {
             mnTxHash.SetHex(mne.getTxHash());
