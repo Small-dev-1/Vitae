@@ -406,11 +406,14 @@ bool CFundamentalnodeBroadcast::Create(std::string strService, std::string strKe
         return false;
     }
 
+	//temporarily disabled, will be replaced in the future.
+	//**TODO**
+	/*
     if (!pwalletMain->GetFundamentalnodeVinAndKeys(txin, pubKeyCollateralAddressNew, keyCollateralAddressNew, strTxHash, strOutputIndex)) {
         strErrorRet = strprintf("Could not allocate txin %s:%s for fundamentalnode %s", strTxHash, strOutputIndex, strService);
         LogPrint("fundamentalnode","CFundamentalnodeBroadcast::Create -- %s\n", strErrorRet);
         return false;
-    }
+    }*/
 
     CService service = CService(strService);
     int mainnetDefaultPort = Params(CBaseChainParams::MAIN).GetDefaultPort();
